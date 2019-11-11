@@ -17,7 +17,7 @@ node test/test.js
 
 - 值得注意的是: 注册中间件时, 第一个参数是 path, 不传递的则默认为: '/'
 
-### 注册中间件: 先将所有的 use, get, post 等函数传递过来的参数进行分类存储在数组中, 得到类似下面的数组
+1. 注册中间件: 先将所有的 use, get, post 等函数传递过来的参数进行分类存储在数组中, 得到类似下面的数组
 
 ```js
 this.routes = {
@@ -51,7 +51,7 @@ post [
 ]
 ```
 
-### 找到要执行的中间件: 根据请求的 method 和 url 来找到所有符合条件的函数: stackList
+2. 找到要执行的中间件: 根据请求的 method 和 url 来找到所有符合条件的函数: stackList
 
 ```js
 // 浏览器访问 http://localhost:9000/api/get-cookie
@@ -68,7 +68,7 @@ stackList [
 ]
 ```
 
-### 执行中间件: 将 stackList 的函数传入 handle 的 next 中, 递归执行
+3. 执行中间件: 将 stackList 的函数传入 handle 的 next 中, 递归执行
 
 示例:
 
@@ -88,7 +88,7 @@ handle(req, res, stackList) {
   next()
 }
 
-// 传入上方的 stackList
+// 传入上方2中的 stackList
 handle(req, res, stackList)
 
 // 拿到 stackList 第一个匹配的中间件([Function: start])执行, 并移除
@@ -102,3 +102,5 @@ handle(req, res, stackList)
 
 // ...
 ```
+
+end
