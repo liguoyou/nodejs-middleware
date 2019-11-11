@@ -1,0 +1,29 @@
+{
+  "name": "nodejs-middleware",
+  "version": "1.0.0",
+  "description": "nodejs 中间件的原理学习",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=dev nodemon ./test/test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liguoyou/nodejs-middleware.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liguoyou/nodejs-middleware/issues"
+  },
+  "homepage": "https://github.com/liguoyou/nodejs-middleware#readme",
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "nodemon": "^1.19.4"
+  }
+}
